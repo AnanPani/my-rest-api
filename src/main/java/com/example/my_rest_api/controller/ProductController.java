@@ -1,7 +1,7 @@
 package com.example.my_rest_api.controller;
 
 import com.example.my_rest_api.model.Product;
-import com.example.my_rest_api.repository.ProductRepository; // Import the new repository
+import com.example.my_rest_api.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,15 +13,12 @@ import java.util.List;
 @RequestMapping("/api/products")
 public class ProductController {
 
-    private final ProductRepository productRepository; // Use the repository
+    private final ProductRepository productRepository;
 
-    // Inject ProductRepository via constructor
     @Autowired
     public ProductController(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
-
-    // --- API Endpoints ---
 
     // GET: ดึงข้อมูลสินค้าทั้งหมด
     // URL: GET /api/products
